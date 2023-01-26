@@ -15,7 +15,7 @@ export const TaskTile: Component<TaskTileProps> = (props) => {
     <li
       // @ts-ignore
       use:draggable
-      class="flex flex-col relative h-32 w-full bg-stone-100 rounded-md text-stone-700 px-4 py-2 draggable cursor-grab active:cursor-grabbing mb-4"
+      class="flex flex-col relative h-32 mb-4 border border-stone-300 bg-stone-100 active:bg-stone-50 rounded-md text-stone-700 px-4 py-2 draggable cursor-grab active:cursor-grabbing active:z-30 active:shadow-lg"
     >
       <p class="font-bold text-lg mb-1 cursor-text">{props.task.name}</p>
 

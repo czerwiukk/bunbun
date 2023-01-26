@@ -41,7 +41,7 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
       />
 
       <section
-        class="w-72 h-full bg-stone-200 rounded-md p-4 flex flex-col justify-between"
+        class="w-72 h-full bg-stone-200 rounded-md p-4 flex flex-col justify-between border border-stone-300"
         classList={{ "animate-pulse": isColumnReloading(props.column.id) }}
       >
         <ul>
