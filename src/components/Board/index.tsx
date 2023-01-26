@@ -12,7 +12,9 @@ interface BoardProps {
 }
 
 export const Board: Component<BoardProps> = (props) => {
-  const { boardColumns, createColumn, deleteColumn } = useColumns(props.id);
+  const { boardColumns, createColumn, deleteColumn } = useColumns(
+    () => props.id
+  );
 
   const [boardTasks, { refetch: refetchTasks }] = createResource(
     () => props.id,

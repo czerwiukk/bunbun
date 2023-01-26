@@ -41,7 +41,7 @@ export const fetchBoardColumns = async (boardId: number) => {
 
 export const fetchBoardTasks = async (boardId: number) => {
   const select =
-    "id, name, description, created_at, column_id, board_columns(board_id)";
+    "id, name, description, created_at, column_id, board_columns!inner(board_id)";
 
   const { data, error, status } = await supabase
     .from("tasks")
