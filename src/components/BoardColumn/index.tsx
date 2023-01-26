@@ -8,6 +8,7 @@ import { changeColumnName } from "~/api";
 
 interface BoardColumnProps {
   column: IBoardColumn;
+  onDeleteColumn: (id: number) => void;
 }
 
 export const BoardColumn: Component<BoardColumnProps> = (props) => {
@@ -56,7 +57,10 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
         </div>
 
         <div class="flex justify-between">
-          <button class="text-stone-400 p-2 hover:text-red-600 transition-colors cursor-pointer">
+          <button
+            class="text-stone-400 p-2 hover:text-red-600 transition-colors cursor-pointer"
+            onClick={() => props.onDeleteColumn(props.column.id)}
+          >
             <Fa icon={faTrash} />
           </button>
 
