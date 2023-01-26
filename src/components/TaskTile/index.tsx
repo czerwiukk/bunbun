@@ -1,3 +1,4 @@
+import { createDraggable } from "@thisbeyond/solid-dnd";
 import { Component } from "solid-js";
 import { IBoardTask } from "~/types";
 
@@ -6,11 +7,16 @@ interface TaskTileProps {
 }
 
 export const TaskTile: Component<TaskTileProps> = (props) => {
-  return (
-    <section class="flex flex-col h-32 w-full bg-zinc-100 rounded-md text-stone-700 px-4 py-2">
-      <p class="font-bold text-lg">{props.task.name}</p>
+  const draggable = createDraggable(props.task.id);
 
-      <p>{props.task.description}</p>
+  return (
+    <section
+      use:draggable
+      class="flex flex-col h-32 w-full bg-stone-100 rounded-md text-stone-700 px-4 py-2 draggable cursor-grab active:cursor-grabbing"
+    >
+      <p class="font-bold text-lg mb-1 cursor-text">{props.task.name}</p>
+
+      <p class="text-sm cursor-text">{props.task.description}</p>
     </section>
   );
 };

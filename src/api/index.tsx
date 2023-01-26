@@ -1,6 +1,15 @@
 import type { IBoard, IBoardColumn } from "~/types";
 import { supabase } from "~/utils";
 
+export const changeColumnName = async (columnId: number, name: string) => {
+  const { error } = await supabase
+    .from("board_columns")
+    .update({ name })
+    .eq("id", columnId);
+
+  if (error) throw error;
+};
+
 export const fetchBoards = async (): Promise<IBoard[]> => {
   const select = "id, name, created_at";
   const { data, error, status } = await supabase

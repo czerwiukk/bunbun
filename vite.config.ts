@@ -4,6 +4,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [solidPlugin(), tsconfigPaths()],
+  optimizeDeps: {
+    extensions: ["jsx"],
+  },
   server: {
     port: 3000,
   },
