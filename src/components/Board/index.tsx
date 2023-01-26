@@ -1,47 +1,43 @@
 import { faPlus, faTableColumns } from "@fortawesome/free-solid-svg-icons";
 import Fa from "solid-fa";
-import {
-  Component,
-  createEffect,
-  createResource,
-  createSignal,
-  For,
-} from "solid-js";
-import { addColumn, deleteColumn, fetchBoardColumns } from "~/api";
+import { Component, createResource, createSignal, For } from "solid-js";
+import { changeTaskColumn } from "~/api";
 import { BoardColumn } from "../BoardColumn";
 import { DragDropProvider, DragDropSensors } from "@thisbeyond/solid-dnd";
+import { fetchBoardTasks } from "~/api/columns";
+import { useColumns } from "~/hooks/columns";
+import { usePendingChanges } from "~/hooks";
 interface BoardProps {
   id: number;
 }
 
 export const Board: Component<BoardProps> = (props) => {
-  const [boardColumns, { refetch: refetchColumns }] = createResource(
+  const { boardColumns, createColumn, deleteColumn } = useColumns(props.id);
+
+  const [boardTasks, { refetch: refetchTasks }] = createResource(
     () => props.id,
-    fetchBoardColumns
+    fetchBoardTasks
   );
-  const [where, setWhere] = createSignal("outside");
+
   const [isAddBtnMoved, moveAddBtn] = createSignal(false);
 
-  const onDragEnd = ({ droppable }: any) => {
-    if (droppable) {
-      setWhere("inside");
-    } else {
-      setWhere("outside");
-    }
+  const { getColumnTasksPredicate, addPendingChange, removePendingChange } =
+    usePendingChanges;
+
+  const onDragEnd = async ({ droppable, draggable }: any) => {
+    addPendingChange(draggable.id, droppable.id);
+    await changeTaskColumn(draggable.id, droppable.id);
+    await refetchTasks();
+    removePendingChange(draggable.id);
   };
 
   const createNewColumn = async () => {
     try {
       moveAddBtn(true);
-      await addColumn(props.id);
-      await refetchColumns();
+      await createColumn();
     } finally {
       moveAddBtn(false);
     }
-  };
-  const deleteExistingColumn = async (columnId: number) => {
-    await deleteColumn(columnId);
-    await refetchColumns();
   };
 
   return (
@@ -52,7 +48,10 @@ export const Board: Component<BoardProps> = (props) => {
           {(column) => (
             <BoardColumn
               column={column}
-              onDeleteColumn={deleteExistingColumn}
+              tasks={
+                boardTasks()?.filter(getColumnTasksPredicate(column.id)) ?? []
+              }
+              onDeleteColumn={deleteColumn}
             />
           )}
         </For>

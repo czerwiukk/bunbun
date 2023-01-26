@@ -1,4 +1,4 @@
-import type { IBoard, IBoardColumn } from "~/types";
+import { IBoardColumn, IBoardTask } from "~/types";
 import { supabase } from "~/utils";
 
 export const changeColumnName = async (columnId: number, name: string) => {
@@ -25,11 +25,13 @@ export const addColumn = async (board_id: number) => {
   if (error) throw error;
 };
 
-export const fetchBoards = async (): Promise<IBoard[]> => {
+export const fetchBoardColumns = async (boardId: number) => {
   const select = "id, name, created_at";
+
   const { data, error, status } = await supabase
-    .from("boards")
-    .select<typeof select, IBoard>(select);
+    .from("board_columns")
+    .select<typeof select, IBoardColumn>(select)
+    .eq("board_id", boardId);
 
   if (error && status !== 406) {
     throw error;
@@ -37,14 +39,14 @@ export const fetchBoards = async (): Promise<IBoard[]> => {
   return data ?? [];
 };
 
-export const fetchBoardColumns = async (boardId: number) => {
+export const fetchBoardTasks = async (boardId: number) => {
   const select =
-    "id, name, created_at, tasks(id, name, description, created_at)";
+    "id, name, description, created_at, column_id, board_columns(board_id)";
 
   const { data, error, status } = await supabase
-    .from("board_columns")
-    .select<typeof select, IBoardColumn>(select)
-    .eq("board_id", boardId);
+    .from("tasks")
+    .select<typeof select, IBoardTask>(select)
+    .eq("board_columns.board_id", boardId);
 
   if (error && status !== 406) {
     throw error;
