@@ -12,13 +12,11 @@ interface BoardColumnProps {
 }
 
 export const BoardColumn: Component<BoardColumnProps> = (props) => {
-  const [editColumn, setEditColumn] = createSignal(false);
   const droppable = createDroppable(props.column.id);
   let input: HTMLInputElement;
 
   const handleColumnNameEdit = async (e: KeyboardEvent) => {
     if (e.key !== "Enter" || !input.value) return;
-    setEditColumn(false);
     await changeColumnName(props.column.id, input.value);
   };
 
@@ -28,26 +26,12 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
       class="droppable mb-4"
       classList={{ "!droppable-accept": droppable.isActiveDroppable }}
     >
-      <Show
-        when={editColumn()}
-        fallback={
-          <label
-            class="text-lg text-stone-700 cursor-text"
-            onClick={() => setEditColumn(true)}
-          >
-            {props.column.name}
-          </label>
-        }
-      >
-        <input
-          ref={input}
-          autofocus
-          class="text-lg text-stone-700 bg-stone-50 outline-none rounded-md"
-          value={props.column.name}
-          onBlur={() => setEditColumn(false)}
-          onKeyDown={handleColumnNameEdit}
-        />
-      </Show>
+      <input
+        ref={input}
+        class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
+        value={props.column.name}
+        onKeyDown={handleColumnNameEdit}
+      />
 
       <section class="w-72 h-full bg-stone-200 rounded-md p-4 flex flex-col justify-between">
         <div>

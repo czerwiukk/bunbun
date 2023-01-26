@@ -1,7 +1,6 @@
 import { Component, For } from "solid-js";
 import { currentBoardId, setCurrentBoardId } from "~/App";
 import bunbunSvg from "~/assets/bunbun.svg";
-import { cls } from "~/utils";
 
 interface NavbarProps {
   boards: { id: number; name: string }[];
@@ -13,23 +12,20 @@ export const Navbar: Component<NavbarProps> = (props) => (
       <h1 class="text-6xl font-black">
         <span class="text-amber-900">bun</span>
 
-        <span class="text-amber-400 -m-1">bun</span>
+        <span class="text-amber-400 -m-2">bun</span>
       </h1>
 
-      <img class="-m-1" width={70} src={bunbunSvg} alt="bunbun logo" />
+      <img width={72} src={bunbunSvg} alt="bunbun logo" />
     </div>
 
     <ul class="flex gap-12">
       <For each={props.boards}>
         {(board) => (
           <li
-            class={cls(
-              "btn btn-sm bg-transparent hover:bg-amber-100  text-stone-900 border-0",
-              {
-                "hover:bg-amber-500 bg-amber-400":
-                  currentBoardId() === board.id,
-              }
-            )}
+            class="btn btn-sm bg-transparent hover:bg-amber-100  text-stone-900 border-0"
+            classList={{
+              "hover:bg-amber-500 bg-amber-400": currentBoardId() === board.id,
+            }}
             onClick={() => {
               console.log(board);
               setCurrentBoardId(board.id);

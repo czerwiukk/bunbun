@@ -10,7 +10,6 @@ import {
 import { addColumn, deleteColumn, fetchBoardColumns } from "~/api";
 import { BoardColumn } from "../BoardColumn";
 import { DragDropProvider, DragDropSensors } from "@thisbeyond/solid-dnd";
-import classNames from "classnames";
 interface BoardProps {
   id: number;
 }
@@ -22,10 +21,6 @@ export const Board: Component<BoardProps> = (props) => {
   );
   const [where, setWhere] = createSignal("outside");
   const [isAddBtnMoved, moveAddBtn] = createSignal(false);
-
-  createEffect(() => {
-    console.log("board;", props.id);
-  });
 
   const onDragEnd = ({ droppable }: any) => {
     if (droppable) {
@@ -50,7 +45,7 @@ export const Board: Component<BoardProps> = (props) => {
   };
 
   return (
-    <div class={classNames("flex gap-4 mt-8 flex-grow")}>
+    <div class="flex gap-4 mt-8 flex-grow">
       <DragDropProvider onDragEnd={onDragEnd}>
         <DragDropSensors />
         <For each={boardColumns()}>
@@ -67,9 +62,7 @@ export const Board: Component<BoardProps> = (props) => {
         classList={{ "transition-transform translate-x-72": isAddBtnMoved() }}
       >
         <button
-          class={classNames(
-            "btn btn-sm bg-transparent bg-amber-50 hover:bg-amber-100  text-stone-900 border-0 flex items-center gap-2"
-          )}
+          class="btn btn-sm bg-transparent bg-amber-100 hover:bg-amber-200 text-stone-900 border-0 flex items-center gap-2"
           onClick={createNewColumn}
         >
           <Fa icon={faTableColumns} />

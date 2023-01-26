@@ -21,7 +21,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@supabase/supabase-js": "^2.4.1",
     "@thisbeyond/solid-dnd": "^0.7.3",
-    "classnames": "^2.3.2",
     "daisyui": "^2.47.1",
     "solid-fa": "^0.1.0",
     "solid-js": "1.5.4",
