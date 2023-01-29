@@ -1,6 +1,5 @@
 import { render } from "solid-testing-library";
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { tasks } from "~/mocks";
+import { describe, expect, it, vi } from "vitest";
 import { IBoardColumn } from "~/types";
 import { BoardColumn } from "./BoardColumn";
 
@@ -19,11 +18,7 @@ describe("BoardColumn", () => {
   it("matches snapshot", () => {
     expect(
       render(() => (
-        <BoardColumn
-          column={column}
-          tasks={tasks}
-          onDeleteColumn={() => null}
-        />
+        <BoardColumn column={column} tasks={[]} onDeleteColumn={() => null} />
       ))
     ).toMatchSnapshot();
   });

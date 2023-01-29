@@ -1,5 +1,5 @@
 import { render } from "solid-testing-library";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { tasks } from "~/mocks";
 import { TaskTile } from "./TaskTile";
 
@@ -9,6 +9,6 @@ vi.mock("@thisbeyond/solid-dnd", () => ({
 
 describe("TaskTile", () => {
   it("matches snapshot", () => {
-    expect(render(() => <TaskTile task={tasks[0]} />)).toMatchSnapshot();
+    expect(render(() => <TaskTile task={tasks[0]} />, {})).toMatchSnapshot();
   });
 });
