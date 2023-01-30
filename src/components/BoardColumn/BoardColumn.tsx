@@ -37,13 +37,13 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
         id={`${props.column.id}-column-name`}
         // @ts-ignore
         ref={input}
-        class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
+        class="text-lg text-stone-700 dark:text-stone-100 cursor-text outline-none bg-transparent rounded-md"
         value={props.column.name}
         onKeyDown={handleColumnNameEdit}
       />
 
       <section
-        class="w-72 h-full bg-stone-200 rounded-md p-2 flex flex-col justify-between border border-stone-300"
+        class="w-72 h-full bg-stone-200 dark:bg-stone-800 rounded-md p-2 flex flex-col justify-between border border-stone-300 dark:border-stone-900"
         classList={{ "animate-pulse": isColumnReloading(props.column.id) }}
       >
         <ul>
@@ -62,7 +62,7 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
 
           <Modal
             trigger={<Fa icon={faPlus} />}
-            triggerClass="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors"
+            triggerClass="w-8 h-8 rounded-full p-2 bg-stone-300 dark:bg-stone-600 hover:bg-stone-400 hover:bg-stone-500 dark:text-stone-200 cursor-pointer grid place-content-center transition-colors"
           >
             Add task modal
           </Modal>

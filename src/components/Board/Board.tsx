@@ -62,7 +62,7 @@ export const Board: Component<BoardProps> = (props) => {
         classList={{ "transition-transform translate-x-72": isAddBtnMoved() }}
       >
         <button
-          class="btn btn-sm bg-transparent bg-amber-100 hover:bg-amber-200 text-stone-900 border-0 flex items-center gap-2"
+          class="btn btn-sm bg-transparent bg-amber-100 dark:bg-stone-800 hover:bg-amber-200 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 border-0 flex items-center gap-2"
           onClick={createNewColumn}
         >
           <Fa icon={faTableColumns} />
