@@ -1,6 +1,6 @@
 import Fa from "solid-fa";
 import { Component, For } from "solid-js";
-import { TaskTile } from "../TaskTile";
+import { TaskTile } from "../TaskTile/TaskTile";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { IBoardTask, type IBoardColumn } from "~/types";
 import { createDroppable } from "@thisbeyond/solid-dnd";
@@ -33,6 +33,7 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
       classList={{ "!droppable-accept": droppable.isActiveDroppable }}
     >
       <input
+        id={`${props.column.id}-column-name`}
         // @ts-ignore
         ref={input}
         class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
@@ -41,7 +42,7 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
       />
 
       <section
-        class="w-72 h-full bg-stone-200 rounded-md p-4 flex flex-col justify-between border border-stone-300"
+        class="w-72 h-full bg-stone-200 rounded-md p-2 flex flex-col justify-between border border-stone-300"
         classList={{ "animate-pulse": isColumnReloading(props.column.id) }}
       >
         <ul>
@@ -58,7 +59,7 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
             <Fa icon={faTrash} />
           </button>
 
-          <button class="w-8 h-8 rounded-full p-2 bg-stone-300 cursor-pointer grid place-content-center transition-colors hover:bg-stone-400">
+          <button class="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors">
             <Fa icon={faPlus} />
           </button>
         </div>

@@ -2,11 +2,10 @@ import { faPlus, faTableColumns } from "@fortawesome/free-solid-svg-icons";
 import Fa from "solid-fa";
 import { Component, createResource, createSignal, For } from "solid-js";
 import { changeTaskColumn } from "~/api";
-import { BoardColumn } from "../BoardColumn";
+import { BoardColumn } from "../BoardColumn/BoardColumn";
 import { DragDropProvider, DragDropSensors } from "@thisbeyond/solid-dnd";
 import { fetchBoardTasks } from "~/api/columns";
-import { useColumns } from "~/hooks/columns";
-import { usePendingChanges } from "~/hooks";
+import { usePendingChanges, useColumns } from "~/hooks";
 interface BoardProps {
   id: number;
 }

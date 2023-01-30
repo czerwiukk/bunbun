@@ -1,0 +1,201 @@
+// Vitest Snapshot v1
+
+exports[`BoardColumn > matches snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="droppable mb-4"
+      >
+        <input
+          class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
+          id="1-column-name"
+        />
+        <section
+          class="w-72 h-full bg-stone-200 rounded-md p-2 flex flex-col justify-between border border-stone-300"
+        >
+          <ul />
+          <div
+            class="flex justify-between"
+          >
+            <button
+              class="text-stone-400 p-2 hover:text-red-600 transition-colors cursor-pointer"
+            >
+              <svg
+                aria-hidden="true"
+                class="fa"
+                style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  transform="translate(224 256)"
+                  transform-origin="112 0"
+                >
+                  <g
+                    transform="translate(0,0) scale(1,1)"
+                  >
+                    <path
+                      d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
+                      fill="currentColor"
+                      transform="translate(-224 -256)"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <button
+              class="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors"
+            >
+              <svg
+                aria-hidden="true"
+                class="fa"
+                style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  transform="translate(224 256)"
+                  transform-origin="112 0"
+                >
+                  <g
+                    transform="translate(0,0) scale(1,1)"
+                  >
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                      fill="currentColor"
+                      transform="translate(-224 -256)"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="droppable mb-4"
+    >
+      <input
+        class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
+        id="1-column-name"
+      />
+      <section
+        class="w-72 h-full bg-stone-200 rounded-md p-2 flex flex-col justify-between border border-stone-300"
+      >
+        <ul />
+        <div
+          class="flex justify-between"
+        >
+          <button
+            class="text-stone-400 p-2 hover:text-red-600 transition-colors cursor-pointer"
+          >
+            <svg
+              aria-hidden="true"
+              class="fa"
+              style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                transform="translate(224 256)"
+                transform-origin="112 0"
+              >
+                <g
+                  transform="translate(0,0) scale(1,1)"
+                >
+                  <path
+                    d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
+                    fill="currentColor"
+                    transform="translate(-224 -256)"
+                  />
+                </g>
+              </g>
+            </svg>
+          </button>
+          <button
+            class="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors"
+          >
+            <svg
+              aria-hidden="true"
+              class="fa"
+              style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                transform="translate(224 256)"
+                transform-origin="112 0"
+              >
+                <g
+                  transform="translate(0,0) scale(1,1)"
+                >
+                  <path
+                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                    fill="currentColor"
+                    transform="translate(-224 -256)"
+                  />
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "unmount": [Function],
+}
+`;
