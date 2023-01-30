@@ -6,6 +6,7 @@ import { IBoardTask, type IBoardColumn } from "~/types";
 import { createDroppable } from "@thisbeyond/solid-dnd";
 import { changeColumnName } from "~/api";
 import { usePendingChanges } from "~/hooks";
+import { Modal } from "..";
 
 interface BoardColumnProps {
   column: IBoardColumn;
@@ -59,9 +60,12 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
             <Fa icon={faTrash} />
           </button>
 
-          <button class="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors">
-            <Fa icon={faPlus} />
-          </button>
+          <Modal
+            trigger={<Fa icon={faPlus} />}
+            triggerClass="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors"
+          >
+            Add task modal
+          </Modal>
         </div>
       </section>
     </div>
