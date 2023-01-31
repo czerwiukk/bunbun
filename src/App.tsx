@@ -23,7 +23,7 @@ const App: Component = () => {
   });
 
   return (
-    <main class="p-8 w-screen h-screen flex flex-col bg-stone-50 dark:bg-stone-900">
+    <main class="flex h-screen w-screen flex-col bg-stone-50 p-8 dark:bg-stone-900">
       <Navbar boards={boards() ?? []} />
 
       <Show when={currentBoardId()} fallback={"Loading..."}>

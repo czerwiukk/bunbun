@@ -1,7 +1,7 @@
-import { faGripVertical, faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { createDraggable } from "@thisbeyond/solid-dnd";
-import Fa from "solid-fa";
 import { Component } from "solid-js";
+import Fa from "solid-fa";
+import { createDraggable } from "@thisbeyond/solid-dnd";
+import { faGripVertical } from "@fortawesome/free-solid-svg-icons";
 import { IBoardTask } from "~/types";
 
 interface TaskTileProps {
@@ -9,17 +9,18 @@ interface TaskTileProps {
 }
 
 export const TaskTile: Component<TaskTileProps> = (props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const draggable = createDraggable(props.task.id);
 
   return (
     <li
       // @ts-ignore
       use:draggable
-      class="flex flex-col relative h-24 mb-4 border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-900 active:bg-stone-50 dark:active:bg-stone-700 rounded-md text-stone-700 dark:text-stone-100 px-4 py-2 draggable cursor-grab active:cursor-grabbing active:z-30 active:shadow-lg overflow-hidden text-ellipsis"
+      class="draggable relative mb-4 flex h-24 cursor-grab flex-col overflow-hidden text-ellipsis  rounded-md border border-stone-300 bg-stone-100 px-4 py-2 text-stone-700 active:z-30 active:cursor-grabbing active:bg-stone-50 active:shadow-lg dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:active:bg-stone-700"
     >
-      <p class="font-bold mb-1 truncate">{props.task.name}</p>
+      <p class="mb-1 truncate font-bold">{props.task.name}</p>
 
-      <p class="text-xs truncate">{props.task.description}</p>
+      <p class="truncate text-xs">{props.task.description}</p>
 
       <div class="absolute right-2 bottom-2 text-stone-400">
         <Fa icon={faGripVertical} />

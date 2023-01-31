@@ -37,13 +37,13 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
         id={`${props.column.id}-column-name`}
         // @ts-ignore
         ref={input}
-        class="text-lg text-stone-700 dark:text-stone-100 cursor-text outline-none bg-transparent rounded-md"
+        class="cursor-text rounded-md bg-transparent text-lg text-stone-700 outline-none dark:text-stone-100"
         value={props.column.name}
         onKeyDown={handleColumnNameEdit}
       />
 
       <section
-        class="w-72 h-full bg-stone-200 dark:bg-stone-800 rounded-md p-2 flex flex-col justify-between border border-stone-300 dark:border-stone-900"
+        class="flex h-full w-72 flex-col justify-between rounded-md border border-stone-300 bg-stone-200 p-2 dark:border-stone-900 dark:bg-stone-800"
         classList={{ "animate-pulse": isColumnReloading(props.column.id) }}
       >
         <ul>
@@ -54,7 +54,7 @@ export const BoardColumn: Component<BoardColumnProps> = (props) => {
 
         <div class="flex justify-between">
           <button
-            class="text-stone-400 p-2 hover:text-red-600 transition-colors cursor-pointer"
+            class="cursor-pointer p-2 text-stone-400 transition-colors hover:text-red-600"
             onClick={() => props.onDeleteColumn(props.column.id)}
           >
             <Fa icon={faTrash} />

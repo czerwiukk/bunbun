@@ -3,7 +3,11 @@ import Fa from "solid-fa";
 import { Component, createResource, createSignal, For } from "solid-js";
 import { changeTaskColumn } from "~/api";
 import { BoardColumn } from "../BoardColumn/BoardColumn";
-import { DragDropProvider, DragDropSensors } from "@thisbeyond/solid-dnd";
+import {
+  DragDropProvider,
+  DragDropSensors,
+  DragEvent,
+} from "@thisbeyond/solid-dnd";
 import { fetchBoardTasks } from "~/api/columns";
 import { usePendingChanges, useColumns } from "~/hooks";
 interface BoardProps {
@@ -25,13 +29,16 @@ export const Board: Component<BoardProps> = (props) => {
   const { getColumnTasksPredicate, addPendingChange, removePendingChange } =
     usePendingChanges;
 
-  const onDragEnd = async ({ droppable, draggable }: any) => {
-    addPendingChange(draggable.id, droppable.id);
+  const onDragEnd = async ({ droppable, draggable }: DragEvent) => {
+    if (!droppable || !draggable) return;
+    const droppableId = +droppable.id;
+    const draggableId = +draggable.id;
+    addPendingChange(droppableId, draggableId);
     try {
-      await changeTaskColumn(draggable.id, droppable.id);
+      await changeTaskColumn(droppableId, draggableId);
     } finally {
       await refetchTasks();
-      removePendingChange(draggable.id);
+      removePendingChange(droppableId);
     }
   };
 
@@ -45,7 +52,7 @@ export const Board: Component<BoardProps> = (props) => {
   };
 
   return (
-    <div class="flex gap-4 mt-8 flex-grow">
+    <div class="mt-8 flex flex-grow gap-4">
       <DragDropProvider onDragEnd={onDragEnd}>
         <DragDropSensors />
         <For each={boardColumns()}>
@@ -65,7 +72,7 @@ export const Board: Component<BoardProps> = (props) => {
         classList={{ "transition-transform translate-x-72": isAddBtnMoved() }}
       >
         <button
-          class="btn btn-sm bg-transparent bg-amber-100 dark:bg-stone-800 hover:bg-amber-200 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 border-0 flex items-center gap-2"
+          class="btn-sm btn flex items-center gap-2 border-0 bg-transparent bg-amber-100 text-stone-900 hover:bg-amber-200 dark:bg-stone-800 dark:text-stone-100 dark:hover:bg-stone-700"
           onClick={createNewColumn}
         >
           <Fa icon={faTableColumns} />

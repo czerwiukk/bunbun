@@ -9,11 +9,11 @@ interface NavbarProps {
 
 export const Navbar: Component<NavbarProps> = (props) => (
   <nav class="flex items-center gap-16">
-    <div class="flex items-center select-none">
+    <div class="flex select-none items-center">
       <h1 class="text-6xl font-black">
         <span class="text-amber-500">bun</span>
 
-        <span class="text-amber-400 -m-2">bun</span>
+        <span class="-m-2 text-amber-400">bun</span>
       </h1>
 
       <img width={72} src={bunbunSvg} alt="bunbun logo" />
@@ -23,7 +23,7 @@ export const Navbar: Component<NavbarProps> = (props) => (
       <For each={props.boards}>
         {(board) => (
           <li
-            class="btn btn-sm bg-transparent hover:bg-amber-100 hover:dark:bg-stone-700  text-stone-900 dark:text-stone-100 border-0"
+            class="btn-sm btn border-0 bg-transparent text-stone-900  hover:bg-amber-100 dark:text-stone-100 hover:dark:bg-stone-700"
             classList={{
               "hover:bg-amber-500 bg-amber-400 dark:bg-stone-600 hover:dark:bg-stone-500":
                 currentBoardId() === board.id,
