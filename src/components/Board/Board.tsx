@@ -34,12 +34,12 @@ export const Board: Component<BoardProps> = (props) => {
     if (!droppable || !draggable) return;
     const droppableId = +droppable.id;
     const draggableId = +draggable.id;
-    addPendingChange(droppableId, draggableId);
+    addPendingChange(draggableId, droppableId);
     try {
-      await changeTaskColumn(droppableId, draggableId);
+      await changeTaskColumn(draggableId, droppableId);
     } finally {
       await refetchTasks();
-      removePendingChange(droppableId);
+      removePendingChange(draggableId);
     }
   };
 
