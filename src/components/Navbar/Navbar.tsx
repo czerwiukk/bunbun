@@ -11,7 +11,7 @@ interface NavbarProps {
 export const Navbar: Component<NavbarProps> = (props) => {
   const { logout, user } = useUser();
   return (
-    <nav class="-100 flex items-center gap-16  text-stone-900 dark:text-stone-100">
+    <nav class="-100 flex items-center justify-between gap-16  text-stone-900 dark:text-stone-100">
       <div class="flex select-none items-center">
         <h1 class="text-6xl font-black">
           <span class="text-amber-500">bun</span>
@@ -22,7 +22,7 @@ export const Navbar: Component<NavbarProps> = (props) => {
         <img width={72} src={bunbunSvg} alt="bunbun logo" />
       </div>
 
-      <ul class="flex gap-12">
+      <ul class="flex flex-grow gap-12">
         <For each={props.boards}>
           {(board) => (
             <li
@@ -42,16 +42,18 @@ export const Navbar: Component<NavbarProps> = (props) => {
         </For>
       </ul>
 
-      <ThemeSwitch />
+      <section class="flex items-center gap-8">
+        <ThemeSwitch />
 
-      <section>Logged in as {user()?.email}</section>
+        <p> Logged in as {user()?.email}</p>
 
-      <button
-        class="btn-sm btn border-0 bg-transparent text-stone-900  hover:bg-amber-100 dark:text-stone-100 hover:dark:bg-stone-700"
-        onClick={logout}
-      >
-        Logout
-      </button>
+        <button
+          class="btn-sm btn border-0 bg-transparent text-stone-900  hover:bg-amber-100 dark:text-stone-100 hover:dark:bg-stone-700"
+          onClick={logout}
+        >
+          Logout
+        </button>
+      </section>
     </nav>
   );
 };

@@ -16,10 +16,9 @@ export const [currentBoardId, setCurrentBoardId] = createSignal<number | null>(
 const App: Component = () => {
   const [boards] = createResource(fetchBoards);
 
-  const { user, signIn } = useUser();
+  const { signIn, isLoggedIn } = useUser();
 
   createEffect(() => {
-    console.log("currentBoardId", currentBoardId());
     if (currentBoardId()) return;
     const firstBoard = boards()?.[0];
     if (firstBoard) setCurrentBoardId(firstBoard.id);
@@ -28,10 +27,15 @@ const App: Component = () => {
   return (
     <main class="flex h-screen w-screen flex-col bg-stone-50 p-8 dark:bg-stone-900">
       <Show
-        when={!!user()}
+        when={isLoggedIn()}
         fallback={
           <section>
-            <button onClick={signIn}>Sign in</button>
+            <button
+              class="btn-sm btn border-0 bg-transparent text-stone-900  hover:bg-amber-100 dark:text-stone-100 hover:dark:bg-stone-700"
+              onClick={signIn}
+            >
+              Sign in
+            </button>
           </section>
         }
       >
