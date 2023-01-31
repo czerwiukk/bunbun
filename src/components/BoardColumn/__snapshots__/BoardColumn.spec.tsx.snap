@@ -9,11 +9,11 @@ exports[`BoardColumn > matches snapshot 1`] = `
         class="droppable mb-4"
       >
         <input
-          class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
+          class="text-lg text-stone-700 dark:text-stone-100 cursor-text outline-none bg-transparent rounded-md"
           id="1-column-name"
         />
         <section
-          class="w-72 h-full bg-stone-200 rounded-md p-2 flex flex-col justify-between border border-stone-300"
+          class="w-72 h-full bg-stone-200 dark:bg-stone-800 rounded-md p-2 flex flex-col justify-between border border-stone-300 dark:border-stone-900"
         >
           <ul />
           <div
@@ -45,8 +45,9 @@ exports[`BoardColumn > matches snapshot 1`] = `
                 </g>
               </svg>
             </button>
-            <button
-              class="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors"
+            <label
+              class="w-8 h-8 rounded-full p-2 bg-stone-300 dark:bg-stone-600 hover:bg-stone-400 hover:bg-stone-500 dark:text-stone-200 cursor-pointer grid place-content-center transition-colors"
+              for="cl-0"
             >
               <svg
                 aria-hidden="true"
@@ -70,7 +71,22 @@ exports[`BoardColumn > matches snapshot 1`] = `
                   </g>
                 </g>
               </svg>
-            </button>
+            </label>
+            <input
+              class="modal-toggle"
+              id="cl-0"
+              type="checkbox"
+            />
+            <label
+              class="modal cursor-pointer"
+              for="cl-0"
+            >
+              <label
+                class="modal-box relative"
+              >
+                Add task modal
+              </label>
+            </label>
           </div>
         </section>
       </div>
@@ -81,11 +97,11 @@ exports[`BoardColumn > matches snapshot 1`] = `
       class="droppable mb-4"
     >
       <input
-        class="text-lg text-stone-700 cursor-text outline-none focus:bg-stone-50 rounded-md"
+        class="text-lg text-stone-700 dark:text-stone-100 cursor-text outline-none bg-transparent rounded-md"
         id="1-column-name"
       />
       <section
-        class="w-72 h-full bg-stone-200 rounded-md p-2 flex flex-col justify-between border border-stone-300"
+        class="w-72 h-full bg-stone-200 dark:bg-stone-800 rounded-md p-2 flex flex-col justify-between border border-stone-300 dark:border-stone-900"
       >
         <ul />
         <div
@@ -117,8 +133,9 @@ exports[`BoardColumn > matches snapshot 1`] = `
               </g>
             </svg>
           </button>
-          <button
-            class="w-8 h-8 rounded-full p-2 bg-stone-300 hover:bg-stone-400 cursor-pointer grid place-content-center transition-colors"
+          <label
+            class="w-8 h-8 rounded-full p-2 bg-stone-300 dark:bg-stone-600 hover:bg-stone-400 hover:bg-stone-500 dark:text-stone-200 cursor-pointer grid place-content-center transition-colors"
+            for="cl-0"
           >
             <svg
               aria-hidden="true"
@@ -142,7 +159,22 @@ exports[`BoardColumn > matches snapshot 1`] = `
                 </g>
               </g>
             </svg>
-          </button>
+          </label>
+          <input
+            class="modal-toggle"
+            id="cl-0"
+            type="checkbox"
+          />
+          <label
+            class="modal cursor-pointer"
+            for="cl-0"
+          >
+            <label
+              class="modal-box relative"
+            >
+              Add task modal
+            </label>
+          </label>
         </div>
       </section>
     </div>

@@ -15,7 +15,7 @@ export const Modal: Component<ModalProps> = (props) => {
       </label>
 
       <input type="checkbox" id={uniqueId} class="modal-toggle" />
-      <label for={uniqueId} class="modal cursor-pointer">
+      <label for={uniqueId} class="modal cursor-pointer bg-backdrop">
         <label class="modal-box relative">{props.children}</label>
       </label>
     </>

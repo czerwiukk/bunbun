@@ -27,9 +27,12 @@ export const Board: Component<BoardProps> = (props) => {
 
   const onDragEnd = async ({ droppable, draggable }: any) => {
     addPendingChange(draggable.id, droppable.id);
-    await changeTaskColumn(draggable.id, droppable.id);
-    await refetchTasks();
-    removePendingChange(draggable.id);
+    try {
+      await changeTaskColumn(draggable.id, droppable.id);
+    } finally {
+      await refetchTasks();
+      removePendingChange(draggable.id);
+    }
   };
 
   const createNewColumn = async () => {

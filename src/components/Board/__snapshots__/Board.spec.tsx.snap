@@ -11,8 +11,53 @@ exports[`Board > matches snapshot 1`] = `
         
         <div>
           <button
-            class="btn btn-sm bg-transparent bg-amber-100 hover:bg-amber-200 text-stone-900 border-0 flex items-center gap-2"
-          />
+            class="btn btn-sm bg-transparent bg-amber-100 dark:bg-stone-800 hover:bg-amber-200 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 border-0 flex items-center gap-2"
+          >
+            <svg
+              aria-hidden="true"
+              class="fa"
+              style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                transform="translate(256 256)"
+                transform-origin="128 0"
+              >
+                <g
+                  transform="translate(0,0) scale(1,1)"
+                >
+                  <path
+                    d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 64V416H224V160H64zm384 0H288V416H448V160z"
+                    fill="currentColor"
+                    transform="translate(-256 -256)"
+                  />
+                </g>
+              </g>
+            </svg>
+            <svg
+              aria-hidden="true"
+              class="fa"
+              style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                transform="translate(224 256)"
+                transform-origin="112 0"
+              >
+                <g
+                  transform="translate(0,0) scale(1,1)"
+                >
+                  <path
+                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                    fill="currentColor"
+                    transform="translate(-224 -256)"
+                  />
+                </g>
+              </g>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -24,8 +69,53 @@ exports[`Board > matches snapshot 1`] = `
       
       <div>
         <button
-          class="btn btn-sm bg-transparent bg-amber-100 hover:bg-amber-200 text-stone-900 border-0 flex items-center gap-2"
-        />
+          class="btn btn-sm bg-transparent bg-amber-100 dark:bg-stone-800 hover:bg-amber-200 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 border-0 flex items-center gap-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="fa"
+            style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              transform="translate(256 256)"
+              transform-origin="128 0"
+            >
+              <g
+                transform="translate(0,0) scale(1,1)"
+              >
+                <path
+                  d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 64V416H224V160H64zm384 0H288V416H448V160z"
+                  fill="currentColor"
+                  transform="translate(-256 -256)"
+                />
+              </g>
+            </g>
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="fa"
+            style="height: 1em; vertical-align: -.125em; transform-origin: center; overflow: visible;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              transform="translate(224 256)"
+              transform-origin="112 0"
+            >
+              <g
+                transform="translate(0,0) scale(1,1)"
+              >
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                  fill="currentColor"
+                  transform="translate(-224 -256)"
+                />
+              </g>
+            </g>
+          </svg>
+        </button>
       </div>
     </div>
   </div>,

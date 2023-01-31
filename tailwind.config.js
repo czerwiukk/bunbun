@@ -6,7 +6,11 @@ module.exports = {
     fontFamily: {
       sans: ["Lato", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        backdrop: "#1c191790",
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
