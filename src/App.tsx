@@ -7,6 +7,7 @@ import {
 } from "solid-js";
 import { Board, Navbar } from "~/components";
 import { fetchBoards } from "~/api";
+import { useUser } from "./hooks/user";
 
 export const [currentBoardId, setCurrentBoardId] = createSignal<number | null>(
   null
@@ -14,6 +15,8 @@ export const [currentBoardId, setCurrentBoardId] = createSignal<number | null>(
 
 const App: Component = () => {
   const [boards] = createResource(fetchBoards);
+
+  const { user, signIn } = useUser();
 
   createEffect(() => {
     console.log("currentBoardId", currentBoardId());
@@ -24,10 +27,19 @@ const App: Component = () => {
 
   return (
     <main class="flex h-screen w-screen flex-col bg-stone-50 p-8 dark:bg-stone-900">
-      <Navbar boards={boards() ?? []} />
+      <Show
+        when={!!user()}
+        fallback={
+          <section>
+            <button onClick={signIn}>Sign in</button>
+          </section>
+        }
+      >
+        <Navbar boards={boards() ?? []} />
 
-      <Show when={currentBoardId()} fallback={"Loading..."}>
-        <Board id={currentBoardId() as number} />
+        <Show when={currentBoardId()} fallback={"Loading..."}>
+          <Board id={currentBoardId() as number} />
+        </Show>
       </Show>
     </main>
   );
