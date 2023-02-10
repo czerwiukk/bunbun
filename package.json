@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@playwright/test": "^1.30.0",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "@vitest/coverage-c8": "^0.28.2",
@@ -33,6 +34,7 @@
     "@supabase/supabase-js": "^2.4.1",
     "@thisbeyond/solid-dnd": "^0.7.3",
     "daisyui": "^2.47.1",
+    "playwright": "^1.30.0",
     "solid-fa": "^0.1.0",
     "solid-js": "1.5.4",
     "vite-tsconfig-paths": "^4.0.5"

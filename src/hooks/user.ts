@@ -17,7 +17,7 @@ const signIn = async () => {
   });
 };
 
-const allowedUserEmails = import.meta.env.VITE_ALLOWED_EMAILS.split(",");
+const allowedUserEmails = import.meta.env.VITE_ALLOWED_EMAILS?.split(",");
 
 export const useUser = () => {
   const user = () => getUserData()?.data.user;

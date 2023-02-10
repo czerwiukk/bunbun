@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@fortawesome/free-solid-svg-icons': ^6.2.1
+  '@playwright/test': ^1.30.0
   '@supabase/supabase-js': ^2.4.1
   '@thisbeyond/solid-dnd': ^0.7.3
   '@typescript-eslint/eslint-plugin': ^5.50.0
@@ -11,6 +12,7 @@ specifiers:
   daisyui: ^2.47.1
   eslint: ^8.33.0
   jsdom: ^21.1.0
+  playwright: ^1.30.0
   postcss: ^8.4.21
   prettier: ^2.8.3
   prettier-plugin-tailwindcss: ^0.2.2
@@ -29,11 +31,13 @@ dependencies:
   '@supabase/supabase-js': 2.4.1
   '@thisbeyond/solid-dnd': 0.7.3_solid-js@1.5.4
   daisyui: 2.47.1_gbtt6ss3tbiz4yjtvdr6fbrj44
+  playwright: 1.30.0
   solid-fa: 0.1.0_solid-js@1.5.4
   solid-js: 1.5.4
   vite-tsconfig-paths: 4.0.5_typescript@4.9.4
 
 devDependencies:
+  '@playwright/test': 1.30.0
   '@typescript-eslint/eslint-plugin': 5.50.0_ce5y2gf7dcf2syqm3ypo44ata4
   '@typescript-eslint/parser': 5.50.0_zkdaqh7it7uc4cvz2haft7rc6u
   '@vitest/coverage-c8': 0.28.2_jsdom@21.1.0
@@ -687,6 +691,15 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+
+  /@playwright/test/1.30.0:
+    resolution: {integrity: sha512-SVxkQw1xvn/Wk/EvBnqWIq6NLo1AppwbYOjNLmyU0R1RoQ3rLEBtmjTnElcnz8VEtn11fptj1ECxK0tgURhajw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.11.18
+      playwright-core: 1.30.0
+    dev: true
 
   /@supabase/functions-js/2.0.0:
     resolution: {integrity: sha512-ozb7bds2yvf5k7NM2ZzUkxvsx4S4i2eRKFSJetdTADV91T65g4gCzEs9L3LUXSrghcGIkUaon03VPzOrFredqg==}
@@ -2706,6 +2719,20 @@ packages:
       mlly: 1.1.0
       pathe: 1.1.0
     dev: true
+
+  /playwright-core/1.30.0:
+    resolution: {integrity: sha512-7AnRmTCf+GVYhHbLJsGUtskWTE33SwMZkybJ0v6rqR1boxq2x36U7p1vDRV7HO2IwTZgmycracLxPEJI49wu4g==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  /playwright/1.30.0:
+    resolution: {integrity: sha512-ENbW5o75HYB3YhnMTKJLTErIBExrSlX2ZZ1C/FzmHjUYIfxj/UnI+DWpQr992m+OQVSg0rCExAOlRwB+x+yyIg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.30.0
+    dev: false
 
   /postcss-import/14.1.0_postcss@8.4.21:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
